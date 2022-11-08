@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <img src="logo.png" style="margin-right: 4px;" width="40px" height="40px">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" onclick="goToHome()">Home</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" onclick="goToSignup()" id="sign-up-nav-link">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" onclick="goToSignin()" id="sign-in-nav-link">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" id="profile-link"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" onclick="goToSignOut()" id="sign-out-nav-link">Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="home">
+            <h2>What is Authentication ?</h2><br>
+            <p>Authentication is the process of uniquely identifying an individual via a set of credentials. In the
+                digital world, authentication is termed as verifying a person's identity or an electronic device.
+                Authentication becomes necessary because it increases the security of consumer's data. Without verifying
+                or authenticating oneself, no one can enter the website and access your data. The most popular example
+                of authentication is entering into a system using login credentials. With the huge increase in the
+                number of digital platforms, the demand for various authentication processes has been increasing for
+                both online and physical systems.
+            </p><br>
+            <div class="description">
+                <img src="logo.png" style="margin-right: 8%;" width="300" height="300">
+                <p>Authentication can be divided into two major categories. <br><br>
+                    1. Human to Machine Authentication <br>
+                    2. Machine to Machine Authentication
+                </p>
+            </div><br><br>
+            <p>In any of the above types of authentication, there is a requirement for certain credentials. In human
+                verification, we have a user ID and password Set by the consumer, while for machines, we have
+                certificates and IP addresses, along with other information.Generally, a consumer has to select or
+                create a User ID and corresponding password for that unique ID that the system will use to verify user
+                credibility. Many companies make use of authentication to verify the users who try to login into their
+                digital platforms. But if consumers' data falls into cybercriminals' hands, it can cause some severe
+                problems. Hence companies ensure using high-level security measures, which involves using another
+                advanced authentication level such as multi-factor authentication.
+            </p>
+        </div>
+        <div id="sign-Up">
+            <form class="row g-3" id="sign-up-form">
+                <h1 class="display-6 form-title" style="text-align: center;">Sign Up</h1>
+                <div class="col-md-6">
+                    <label for="firstName" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="firstName" onkeyup="signUp()" value="" required>
+                    <div class="valid-feedback" id="firstname-valid">
+                        looks Good !
+                    </div>
+                    <div class="invalid-feedback" id="firstname-invalid">
+                        please enter valid firstname
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="lastName" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="lastName" onkeyup="signUp()" value="" required>
+                    <div class="valid-feedback" id="lastname-valid">
+                        looks Good !
+                    </div>
+                    <div class="invalid-feedback" id="lastname-invalid">
+                        please enter valid lastname
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                        <input type="text" class="form-control" id="email" onkeyup="signUp()" required>
+                    </div>
+                    <div class="valid-feedback" id="email-valid">
+                        looks Good !
+                    </div>
+                    <div class="invalid-feedback" id="email-invalid">
+                        please enter valid email
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="number" class="form-label">Phone Number</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="inputGroupPrepend2">+91</span>
+                        <input type="number" class="form-control" id="number" onkeyup="signUp()" required>
+                    </div>
+                    <div class="valid-feedback" id="number-valid">
+                        looks Good !
+                    </div>
+                    <div class="invalid-feedback" id="number-invalid">
+                        please enter valid number
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" onkeyup="signUp()" required>
+                    <div class="invalid-feedback" id="password-invalid">
+                        Please enter password
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" onkeyup="signUp()" required>
+                    <div class="invalid-feedback" id="confirmPassword-invalid">
+                        Password does not match !
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="t-and-c" onclick="signUp()" required>
+                        <label class="form-check-label" for="t-and-c">
+                            Agree to terms and conditions
+                        </label>
+                        <div class="invalid-feedback" id="t-and-c-invalid">
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12" style="text-align: center;">
+                    <button class="btn btn-secondary" type="button" onclick="signUp(true)">Sign Up</button>
+                </div>
+            </form>
+        </div>
+        <div id="sign-In">
+            <form class="row g-3" id="sign-in-form">
+                <h1 class="display-5 form-title" style="text-align: center;">Sign In</h1>
+                <div class="col-md-12">
+                    <label for="login-email" class="form-label">Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                        <input type="text" class="form-control" id="login-email" required>
+                    </div>
+                    <div class="invalid-feedback" id="enteredEmail-invalid">
+                        please enter valid email
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="login-password">Password</label>
+                    <input type="password" class="form-control" id="login-password" required>
+                </div>
+                <div class="col-12" style="text-align: center;">
+                    <button class="btn btn-secondary" type="button" onclick="signIn()">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

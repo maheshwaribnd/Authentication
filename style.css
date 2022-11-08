@@ -1,0 +1,48 @@
+body{
+   background-image: url(/Auntenticate-img.jpg);
+   background-repeat: no-repeat;
+   z-index: -1;
+}
+#home{
+    color: white;
+    text-shadow: .5px .5px 1px;
+}
+p{
+    opacity: 9;
+}
+.description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid grey;
+    box-shadow: 1px 1px 12px rgb(130, 79, 79);
+    border-radius: 5px;
+}
+#sign-Up, #sign-In{
+    background-color: transparent;
+    box-shadow: 3px 3px 18px rgb(130, 79, 79);
+    border: 2px solid grey;
+    border-radius: 35px;
+    margin: auto;
+    padding: 2%;
+    display: none;
+    color: whitesmoke;
+}
+nav ul li a:hover{
+    cursor: pointer;
+    text-shadow: 1px 1px 1px;
+    transition: 0.7s;
+}
+#sign-Up{
+    width: 70%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+#sign-In{
+    width: 40%;
+    margin-top: 7%;
+}
+#profile-link, #sign-out-nav-link{
+    display: none;
+}
